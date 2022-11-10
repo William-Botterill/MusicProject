@@ -424,7 +424,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
         Step4.setBackground(new java.awt.Color(102, 102, 102));
         Step4.setForeground(new java.awt.Color(255, 255, 255));
         Step4.setMaximumRowCount(5);
-        Step4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" }));
+        Step4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" }));
         Step4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Step4ActionPerformed(evt);
@@ -458,7 +458,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
         Step5.setBackground(new java.awt.Color(102, 102, 102));
         Step5.setForeground(new java.awt.Color(255, 255, 255));
         Step5.setMaximumRowCount(5);
-        Step5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" }));
+        Step5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" }));
         Step5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Step5ActionPerformed(evt);
@@ -514,7 +514,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
         Step1.setBackground(new java.awt.Color(102, 102, 102));
         Step1.setForeground(new java.awt.Color(255, 255, 255));
         Step1.setMaximumRowCount(5);
-        Step1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }));
+        Step1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
         Step1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Step1ActionPerformed(evt);
@@ -537,7 +537,8 @@ public class MusicEditorUI extends javax.swing.JFrame {
         Step2.setBackground(new java.awt.Color(102, 102, 102));
         Step2.setForeground(new java.awt.Color(255, 255, 255));
         Step2.setMaximumRowCount(5);
-        Step2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }));
+        Step2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }));
+        Step2.setToolTipText("");
         Step2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Step2ActionPerformed(evt);
@@ -649,7 +650,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
         Step3.setBackground(new java.awt.Color(102, 102, 102));
         Step3.setForeground(new java.awt.Color(255, 255, 255));
         Step3.setMaximumRowCount(5);
-        Step3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }));
+        Step3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" }));
         Step3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Step3ActionPerformed(evt);
@@ -1446,9 +1447,9 @@ public class MusicEditorUI extends javax.swing.JFrame {
     }//GEN-LAST:event_Rotate5StateChanged
 
     private void PlayButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlayButtonMousePressed
-        Graphics tab = jPanel3.getGraphics();
-        tab.setColor(Color.red);
-        tab.fillPolygon(new int [] {248, 252, 252, 248}, new int [] {250,250,200,200},4);
+        //Graphics tab = jPanel3.getGraphics();
+        //tab.setColor(Color.red);
+        //tab.fillPolygon(new int [] {248, 252, 252, 248}, new int [] {250,250,200,200},4);
         try{
             PlayAction();
         } catch(Exception e){
@@ -1472,6 +1473,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
             Synthesizer synth = MidiSystem.getSynthesizer();
             synth.open();
 
+            //Ring 1
             String stepNo = (String)Step1.getSelectedItem();
             float stepAsInt = Integer.parseInt(stepNo);
             String eventNo = (String)Event1.getSelectedItem( );
@@ -1487,35 +1489,97 @@ public class MusicEditorUI extends javax.swing.JFrame {
                 events.add(a);                
             }
 
+            //Ring 2
             String stepNo2 = (String)Step2.getSelectedItem();
             float stepAsInt2 = Integer.parseInt(stepNo2);
             String eventNo2 = (String)Event2.getSelectedItem( );
             float eventAsInt2 = Integer.parseInt(eventNo2);
             float change2 = stepAsInt2/eventAsInt2;
             List<Integer> events2 = new ArrayList<Integer>();
-            events2.add(0);
-            System.out.println(stepAsInt2);
-            System.out.println(eventAsInt2);
-            System.out.println(change2);
-
-            
+            events2.add(0);     
                       
             float current2 = 0;
             for(Integer i = 0; i<eventAsInt2-1; i++){
                 current2 = current2 + change2;
-                Integer a = Math.round(current2);
-                events2.add(a);                
+                Integer a2 = Math.round(current2);
+                events2.add(a2);                
+            }
+            
+            //Ring 3
+            String stepNo3 = (String)Step3.getSelectedItem();
+            float stepAsInt3 = Integer.parseInt(stepNo3);
+            String eventNo3 = (String)Event3.getSelectedItem( );
+            float eventAsInt3 = Integer.parseInt(eventNo3);
+            float change3 = stepAsInt3/eventAsInt3;
+            List<Integer> events3 = new ArrayList<Integer>();
+            events3.add(0);
+                      
+            float current3 = 0;
+            for(Integer i = 0; i<eventAsInt3-1; i++){
+                current3 = current3 + change3;
+                Integer a3 = Math.round(current3);
+                events3.add(a3);                
+            }
+            
+            //Ring 4
+            String stepNo4 = (String)Step4.getSelectedItem();
+            float stepAsInt4 = Integer.parseInt(stepNo4);
+            String eventNo4 = (String)Event4.getSelectedItem( );
+            float eventAsInt4 = Integer.parseInt(eventNo4);
+            float change4 = stepAsInt4/eventAsInt4;
+            List<Integer> events4 = new ArrayList<Integer>();
+            events4.add(0);
+                      
+            float current4 = 0;
+            for(Integer i = 0; i<eventAsInt4-1; i++){
+                current4 = current4 + change4;
+                Integer a4 = Math.round(current4);
+                events4.add(a4);                
+            }
+            
+            //Ring 5
+            String stepNo5 = (String)Step5.getSelectedItem();
+            float stepAsInt5 = Integer.parseInt(stepNo5);
+            String eventNo5 = (String)Event5.getSelectedItem( );
+            float eventAsInt5 = Integer.parseInt(eventNo5);
+            float change5 = stepAsInt5/eventAsInt5;
+            List<Integer> events5 = new ArrayList<Integer>();
+            events5.add(0);
+                      
+            float current5 = 0;
+            for(Integer i = 0; i<eventAsInt5-1; i++){
+                current5 = current5 + change5;
+                Integer a5 = Math.round(current5);
+                events5.add(a5);                
             }
 
             MidiChannel[] channel = synth.getChannels();
-            channel[0].programChange(0,0);
+            channel[0].programChange(1024,80);
+            channel[1].programChange(1024,80);
+            channel[2].programChange(1024,80);
+            channel[3].programChange(1024,80);
+            channel[4].programChange(1024,80);
+            /*
             channel[1].programChange(0,27);
+            channel[2].programChange(0,73);
+            channel[3].programChange(128,57);
+            channel[4].programChange(256,127);
+            */
             
             float tempSteps = 16000/stepAsInt;
             long steps = (long)tempSteps;
             
             float tempSteps2 = 16000/stepAsInt2;
             long steps2 = (long)tempSteps2;
+            
+            float tempSteps3 = 16000/stepAsInt3;
+            long steps3 = (long)tempSteps3;
+            
+            float tempSteps4 = 16000/stepAsInt4;
+            long steps4 = (long)tempSteps4;
+            
+            float tempSteps5 = 16000/stepAsInt5;
+            long steps5 = (long)tempSteps5;
                        
             Sequence total = new Sequence(30, 100, 2);
             
@@ -1528,6 +1592,7 @@ public class MusicEditorUI extends javax.swing.JFrame {
             
             int temp = 0;
             for(int counter = 0; counter <= steps; counter++){ 
+                
                 if(counter == events.get(temp)){
                     MidiEvent noteOn = new MidiEvent(onMsg, (steps*counter) + 50);
                     MidiEvent noteOff = new MidiEvent(offMsg, duration + steps*counter + 50);
@@ -1544,15 +1609,14 @@ public class MusicEditorUI extends javax.swing.JFrame {
             
             Track twoTrack = total.createTrack();
             
-            onMsg = new ShortMessage(ShortMessage.NOTE_ON, 1, 60, 90);
-            offMsg = new ShortMessage(ShortMessage.NOTE_OFF, 1, 60, 90);
+            onMsg = new ShortMessage(ShortMessage.NOTE_ON, 1, 61, 90);
+            offMsg = new ShortMessage(ShortMessage.NOTE_OFF, 1, 61, 90);
             
             temp = 0;
             for(int counter = 0; counter <= steps2; counter++){ 
                 if(counter == events2.get(temp)){
                     MidiEvent noteOn = new MidiEvent(onMsg, (steps2*counter) + 50);
                     MidiEvent noteOff = new MidiEvent(offMsg, duration + steps2*counter + 50);
-                    System.out.println("EYYEYEYEYEYEY");
                     twoTrack.add(noteOn); 
                     twoTrack.add(noteOff);
                     temp = temp + 1;
@@ -1563,26 +1627,66 @@ public class MusicEditorUI extends javax.swing.JFrame {
 
             }
             
-            System.out.println(total.getTracks());
+            Track threeTrack = total.createTrack();
             
+            onMsg = new ShortMessage(ShortMessage.NOTE_ON, 2, 62, 90);
+            offMsg = new ShortMessage(ShortMessage.NOTE_OFF, 2, 62, 90);
             
-            //Track one = properPlaySound(events, stepAsInt);
+            temp = 0;
+            for(int counter = 0; counter <= steps3; counter++){ 
+                if(counter == events3.get(temp)){
+                    MidiEvent noteOn = new MidiEvent(onMsg, (steps3*counter) + 50);
+                    MidiEvent noteOff = new MidiEvent(offMsg, duration + steps3*counter + 50);
+                    threeTrack.add(noteOn); 
+                    threeTrack.add(noteOff);
+                    temp = temp + 1;
+                    if(temp >= events3.size()){
+                        temp = 0;
+                    }                    
+                }
 
+            }
             
-            //Sequence seq = new Sequence(30, 100);
-            //Sequence forOne = properPlaySound(events, stepAsInt);
-            //System.out.println((forOne.getTracks()));
-            //Track[] oneTrack = forOne.getTracks();
+            Track fourTrack = total.createTrack();
             
-            //System.out.println(oneTrack);
+            onMsg = new ShortMessage(ShortMessage.NOTE_ON, 3, 63, 90);
+            offMsg = new ShortMessage(ShortMessage.NOTE_OFF, 3, 63, 90);
+            
+            temp = 0;
+            for(int counter = 0; counter <= steps4; counter++){ 
+                if(counter == events4.get(temp)){
+                    MidiEvent noteOn = new MidiEvent(onMsg, (steps4*counter) + 50);
+                    MidiEvent noteOff = new MidiEvent(offMsg, duration + steps4*counter + 50);
+                    fourTrack.add(noteOn); 
+                    fourTrack.add(noteOff);
+                    temp = temp + 1;
+                    if(temp >= events4.size()){
+                        temp = 0;
+                    }                    
+                }
 
-            //Sequence forTwo = properPlaySound2(events2, stepAsInt2);
-            //System.out.println((forOne.getTracks()));
-            //Track[] twoTrack = forTwo.getTracks();
+            }
             
-             
-            //Sequence total = new Sequence(30, 100);
-            //total.createTrack(oneTrack);
+            Track fiveTrack = total.createTrack();
+            
+            onMsg = new ShortMessage(ShortMessage.NOTE_ON, 4, 64, 90);
+            offMsg = new ShortMessage(ShortMessage.NOTE_OFF, 4, 64, 90);
+            
+            temp = 0;
+            for(int counter = 0; counter <= steps5; counter++){ 
+                if(counter == events5.get(temp)){
+                    MidiEvent noteOn = new MidiEvent(onMsg, (steps5*counter) + 50);
+                    MidiEvent noteOff = new MidiEvent(offMsg, duration + steps5*counter + 50);
+                    fiveTrack.add(noteOn); 
+                    fiveTrack.add(noteOff);
+                    temp = temp + 1;
+                    if(temp >= events5.size()){
+                        temp = 0;
+                    }                    
+                }
+
+            }
+
             
             Sequencer player;
             player = MidiSystem.getSequencer(false);
@@ -1590,9 +1694,6 @@ public class MusicEditorUI extends javax.swing.JFrame {
             t.setReceiver(synth.getReceiver());
             player.open();
             player.setSequence(total);
-            //player.setTrackMute(0, true);
-            //player.setTrackSolo(1, true);
-            //System.out.println(player.getTrackSolo(0));
             player.start();   
         } catch (Exception e){
             System.out.println("Now, this is catastrophic...");
